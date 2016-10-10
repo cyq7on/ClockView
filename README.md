@@ -25,7 +25,7 @@ for (int i = 0; i < 12; i++) {
 for (int i = 0; i < 12; i++) {
     String number = 6 + i < 12 ? String.valueOf(6 + i) : (6 + i) > 12
             ? String.valueOf(i - 6) : "12";
-    mCanvas.drawText(number, 0, 0, mPointerPaint);
+    mCanvas.drawText(number, 0, mRadius * 5.5f / 7, mPointerPaint);
     mCanvas.rotate(30);
 }
 ```
