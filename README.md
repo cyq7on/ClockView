@@ -13,11 +13,7 @@
 for (int i = 0; i < 12; i++) {
     String number = 6 + i < 12 ? String.valueOf(6 + i) : (6 + i) > 12
             ? String.valueOf(i - 6) : "12";
-    mCanvas.save();
-    mCanvas.translate(0, mRadius * 5.5f / 7);
-    mCanvas.rotate(-i * 30);
-    mCanvas.drawText(number, 0, 0, mPointerPaint);
-    mCanvas.restore();
+    mCanvas.drawText(number, 0, mRadius * 5.5f / 7, mPointerPaint);
     mCanvas.rotate(30);
 }
 ```
@@ -25,7 +21,11 @@ for (int i = 0; i < 12; i++) {
 for (int i = 0; i < 12; i++) {
     String number = 6 + i < 12 ? String.valueOf(6 + i) : (6 + i) > 12
             ? String.valueOf(i - 6) : "12";
-    mCanvas.drawText(number, 0, mRadius * 5.5f / 7, mPointerPaint);
+    mCanvas.save();
+    mCanvas.translate(0, mRadius * 5.5f / 7);
+    mCanvas.rotate(-i * 30);
+    mCanvas.drawText(number, 0, 0, mPointerPaint);
+    mCanvas.restore();
     mCanvas.rotate(30);
 }
 ```
